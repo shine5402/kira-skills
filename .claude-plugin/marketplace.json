@@ -1,0 +1,24 @@
+{
+  "name": "kira-skills",
+  "owner": {
+    "name": "shine_5402",
+    "url": "https://github.com/shine5402"
+  },
+  "description": "shine_5402's working set of Claude Code skills and hooks, kept in one place so every repo starts with the same tools.",
+  "plugins": [
+    {
+      "name": "kira",
+      "source": "./",
+      "description": "Workflow skills for planning, implementing, reviewing, and writing documents that agents consume, plus hooks that keep automated PR review honest.",
+      "category": "engineering",
+      "keywords": [
+        "skills",
+        "workflow",
+        "code-review",
+        "tdd",
+        "writing-for-agents",
+        "copilot"
+      ]
+    }
+  ]
+}

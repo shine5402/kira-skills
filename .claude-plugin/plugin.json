@@ -1,0 +1,19 @@
+{
+  "name": "kira",
+  "description": "Workflow skills for planning, implementing, reviewing, and writing documents that agents consume — the set I carry into every repo.",
+  "author": {
+    "name": "shine_5402",
+    "url": "https://github.com/shine5402"
+  },
+  "repository": "https://github.com/shine5402/kira-skills",
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "workflow",
+    "code-review",
+    "tdd",
+    "writing-for-agents",
+    "copilot",
+    "qt"
+  ]
+}
