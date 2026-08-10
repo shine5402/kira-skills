@@ -6,6 +6,8 @@ Most of these started as [Matt Pocock's skills](https://github.com/mattpocock/sk
 
 It's public because some of it may be useful to colleagues and friends. It's shaped around how I work, so treat it as a starting point rather than a standard.
 
+Everything here targets the Claude Code harness: the skill format, the plugin and marketplace manifests, and the hook event names are all its own. Another harness would need these adapted, not just copied.
+
 ## Install
 
 ```bash
