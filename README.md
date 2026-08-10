@@ -72,4 +72,6 @@ Several skills — `wayfinder`, `triage`, `to-tickets`, `to-spec`, `code-review`
 
 ## License
 
-MIT. The skills derived from Matt Pocock's repo are MIT-licensed there too.
+MIT — see [LICENSE](LICENSE).
+
+Skills derived from [mattpocock/skills](https://github.com/mattpocock/skills) remain subject to that project's MIT license, Copyright (c) 2026 Matt Pocock. Its notice is reproduced in [LICENSE](LICENSE).
