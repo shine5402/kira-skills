@@ -1,6 +1,11 @@
+THIRD-PARTY NOTICES
+
+Portions of this repository are derived from mattpocock/skills
+(https://github.com/mattpocock/skills), used and modified under the MIT License.
+
 MIT License
 
-Copyright (c) 2026 shine_5402
+Copyright (c) 2026 Matt Pocock
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
