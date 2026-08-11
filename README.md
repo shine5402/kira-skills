@@ -54,6 +54,7 @@ The plugin has no `version` field, so updates follow the repository's commits â€
 
 | Skill | What it does |
 | --- | --- |
+| `wait-what` | That last message didn't land â€” re-pitch it with context, in plain language and the repo's own terms |
 | `handoff` | Hand the current state to the next session |
 | `prepare-compact` / `trim-memory` | Keep context and memory from silting up |
 | `qt-reference` | Answer Qt questions from the local `.qch` docs and source tree, not the web |
