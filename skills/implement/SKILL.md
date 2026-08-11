@@ -13,3 +13,5 @@ Run typechecking regularly, single test files regularly, and the full test suite
 Once done, use /kira:code-review to review the work.
 
 Commit your work to the current branch.
+
+Open a pr (draft, if not otherwise agreed) after finishing the work, and watch for ci if applicable.
