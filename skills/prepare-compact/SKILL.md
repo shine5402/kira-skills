@@ -13,4 +13,5 @@ turns finishing or committing work to make it safe.
 Then close your reply with a short handoff: where the work stands, anything you
 need them to decide, and anything worth keeping past the summary — decisions
 they steered and the reasoning behind them, findings that were costly to dig up.
-Note where those might live; it's their call whether to save them.
+Note where those might live; If you think it's worth saving in comments to current ticket, 
+or a local scratchpad, you can do it immediately, otherwise it's user's call whether to save them.
