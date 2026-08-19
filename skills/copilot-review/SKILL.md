@@ -29,7 +29,7 @@ For a document that gets loaded constantly — a skill, `CLAUDE.md`, an ADR, a m
 
 Copilot doesn't re-review on push. Use `gh pr edit <PR#> --add-reviewer @copilot`.
 
-To check whether it's attached, use REST: `gh api repos/<owner>/<repo>/pulls/<PR#> --jq '.requested_reviewers[].login'`. `gh pr view --json reviewRequests` goes through GraphQL, which hides bot reviewers and returns `[]` even when Copilot is requested.
+To check whether it's attached, use REST: `gh api repos/<owner>/<repo>/pulls/<PR#> --jq '.requested_reviewers[].login'` — but an empty result from it is never evidence of absence, because the request state drifts in time: empty in the gap before Copilot picks the PR up, empty again once the review is submitted and the request is fulfilled, so it cannot tell "not yet" from "already done" and a review can land a minute after you read `[]` — wait for the review itself instead of concluding from the check. `gh pr view --json reviewRequests` goes through GraphQL, which hides bot reviewers and returns `[]` even when Copilot is requested.
 
 Never write `@copilot` in a PR body, comment, review reply, or commit message. In free text it posts under the human's identity and makes GitHub spawn a Copilot coding session on their account, which is not yours to start for them. Refer to it as "Copilot" in prose.
 
