@@ -14,8 +14,7 @@ tell "checking for Copilot" from "checking for humans"):
      just did either, you can safely ASSUME Copilot is attached — no need to check.
      A manual re-request is only warranted AFTER you push fix-up commits.
   2. `--json reviewRequests` (GraphQL) hides bot reviewers, so `[]` here does NOT
-     mean Copilot is absent. To actually confirm a bot reviewer, use REST:
-       gh api repos/<owner>/<repo>/pulls/<PR#> --jq '.requested_reviewers[].login'
+     mean Copilot is absent.
 
 See skill: copilot-review.
 """
@@ -95,8 +94,7 @@ if not any(is_pr_view_reviewrequests(seg) for seg in command_segments(command)):
 message = (
     "`--json reviewRequests` uses GraphQL, which hides bot reviewers — `[]` here "
     "doesn't mean Copilot is absent. Copilot auto-attaches on PR-open / "
-    "Draft -> Ready, so you can assume it's there, or confirm via REST:\n"
-    "  gh api repos/<owner>/<repo>/pulls/<PR#> --jq '.requested_reviewers[].login'"
+    "Draft -> Ready, so you can assume it's there."
 )
 
 print(json.dumps({
