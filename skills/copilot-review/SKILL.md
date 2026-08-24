@@ -33,6 +33,8 @@ Nothing substitutes for that command when it looks like it isn't working. REST `
 
 To check whether it's attached, use REST: `gh api repos/<owner>/<repo>/pulls/<PR#> --jq '.requested_reviewers[].login'` — but an empty result from it is never evidence of absence, because the request state drifts in time: empty in the gap before Copilot picks the PR up, empty again once the review is submitted and the request is fulfilled, so it cannot tell "not yet" from "already done" and a review can land a minute after you read `[]` — wait for the review itself instead of concluding from the check. `gh pr view --json reviewRequests` goes through GraphQL, which hides bot reviewers and returns `[]` even when Copilot is requested. The timeline is the one positive check that holds: `gh api repos/<owner>/<repo>/issues/<PR#>/timeline` records a `review_requested` event naming `Copilot` (`type: Bot`) for every real request.
 
+Match the author loosely when you wait for the review to land — a substring, not an equality test. It arrives under a longer `copilot-…[bot]` login rather than the `Copilot` the timeline event names, so an exact filter on the requesting name silently never fires, which reads exactly like a review that hasn't arrived. Expect state `COMMENTED`; it comments rather than approves.
+
 Never write `@copilot` in a PR body, comment, review reply, or commit message. In free text it posts under the human's identity and makes GitHub spawn a Copilot coding session on their account, which is not yours to start for them. Refer to it as "Copilot" in prose.
 
 ## When to stop
