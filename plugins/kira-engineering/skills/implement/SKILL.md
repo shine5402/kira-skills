@@ -10,7 +10,7 @@ Use /tdd where possible, at pre-agreed seams.
 
 Run typechecking regularly, single test files regularly, and the full test suite once at the end.
 
-Once done, use /kira:code-review to review the work.
+Once done, review with `/kira[-engineering]:code-review` — not the built-in `code-review`.
 
 Commit your work to the current branch.
 

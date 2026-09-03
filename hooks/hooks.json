@@ -6,19 +6,19 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}\"/hooks/block-copilot-mention.py"
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}\"/plugins/kira-copilot-review-hooks/hooks/block-copilot-mention.py"
           },
           {
             "type": "command",
-            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}\"/hooks/hint-copilot-review-check.py"
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}\"/plugins/kira-copilot-review-hooks/hooks/hint-copilot-review-check.py"
           },
           {
             "type": "command",
-            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}\"/hooks/hint-pr-ready-monitor.py"
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}\"/plugins/kira-copilot-review-hooks/hooks/hint-pr-ready-monitor.py"
           },
           {
             "type": "command",
-            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}\"/hooks/hint-stale-gh.py"
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}\"/plugins/kira-copilot-review-hooks/hooks/hint-stale-gh.py"
           }
         ]
       }

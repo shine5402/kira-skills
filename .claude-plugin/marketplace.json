@@ -9,7 +9,7 @@
     {
       "name": "kira",
       "source": "./",
-      "description": "Workflow skills for planning, implementing, reviewing, and writing documents that agents consume, plus hooks that keep automated PR review honest.",
+      "description": "Everything below in one install — engineering skills, the Copilot review skill, and its hooks. Install the pieces instead if you only want some.",
       "category": "engineering",
       "keywords": [
         "skills",
@@ -18,6 +18,45 @@
         "tdd",
         "writing-for-agents",
         "copilot"
+      ]
+    },
+    {
+      "name": "kira-engineering",
+      "source": "./plugins/kira-engineering",
+      "description": "Workflow skills for planning, implementing, reviewing, and writing documents that agents consume.",
+      "category": "engineering",
+      "keywords": [
+        "skills",
+        "workflow",
+        "code-review",
+        "tdd",
+        "writing-for-agents",
+        "qt"
+      ]
+    },
+    {
+      "name": "kira-copilot-review",
+      "source": "./plugins/kira-copilot-review",
+      "description": "Engaging automated PR review from GitHub Copilot — what to act on, what to skip, and when to stop.",
+      "category": "engineering",
+      "keywords": [
+        "skills",
+        "code-review",
+        "copilot",
+        "github",
+        "pull-request"
+      ]
+    },
+    {
+      "name": "kira-copilot-review-hooks",
+      "source": "./plugins/kira-copilot-review-hooks",
+      "description": "PreToolUse hooks backing the Copilot review skill. Separate so harnesses that mishandle Claude Code hooks can skip them.",
+      "category": "engineering",
+      "keywords": [
+        "hooks",
+        "copilot",
+        "github",
+        "pull-request"
       ]
     }
   ]
