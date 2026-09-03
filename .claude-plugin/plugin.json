@@ -1,6 +1,6 @@
 {
   "name": "kira",
-  "description": "Workflow skills for planning, implementing, reviewing, and writing documents that agents consume — the set I carry into every repo.",
+  "description": "The whole kira set in one install: engineering workflow skills, the Copilot PR-review skill, and the Claude Code hooks that back it.",
   "author": {
     "name": "shine_5402",
     "url": "https://github.com/shine5402"
@@ -15,5 +15,9 @@
     "writing-for-agents",
     "copilot",
     "qt"
+  ],
+  "skills": [
+    "./plugins/kira-engineering/skills",
+    "./plugins/kira-copilot-review/skills"
   ]
 }

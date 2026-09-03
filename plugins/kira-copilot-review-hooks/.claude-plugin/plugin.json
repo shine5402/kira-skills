@@ -1,0 +1,19 @@
+{
+  "name": "kira-copilot-review-hooks",
+  "description": "PreToolUse hooks that keep automated Copilot PR review honest — one block, three advisories. Claude Code only.",
+  "author": {
+    "name": "shine_5402",
+    "url": "https://github.com/shine5402"
+  },
+  "repository": "https://github.com/shine5402/kira-skills",
+  "license": "MIT",
+  "keywords": [
+    "hooks",
+    "copilot",
+    "github",
+    "pull-request"
+  ],
+  "dependencies": [
+    "kira-copilot-review"
+  ]
+}

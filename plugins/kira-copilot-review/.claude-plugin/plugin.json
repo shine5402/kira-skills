@@ -1,0 +1,17 @@
+{
+  "name": "kira-copilot-review",
+  "description": "Engaging automated PR review from GitHub Copilot — what to act on, what to skip, and when to stop.",
+  "author": {
+    "name": "shine_5402",
+    "url": "https://github.com/shine5402"
+  },
+  "repository": "https://github.com/shine5402/kira-skills",
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "code-review",
+    "copilot",
+    "github",
+    "pull-request"
+  ]
+}

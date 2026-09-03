@@ -10,7 +10,10 @@ Use /tdd where possible, at pre-agreed seams.
 
 Run typechecking regularly, single test files regularly, and the full test suite once at the end.
 
-Once done, use /kira:code-review to review the work. Also use an additional review subagent to compare your implementation against the design prototype (e.g. from DesignSync) the user has provided. 
+Once done, review with `/kira[-engineering]:code-review` — not the built-in `code-review`.
+
+Also use an additional review subagent to compare your implementation against the design prototype
+(e.g. from DesignSync) the user has provided.
 
 During implementation, check your work against the design regularly — for example using Playwright. The review subagent can use the same tooling to verify the comparison.
 
