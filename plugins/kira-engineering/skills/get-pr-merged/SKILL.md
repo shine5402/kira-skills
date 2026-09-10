@@ -7,7 +7,7 @@ disable-model-invocation: true
 Take the draft PR you opened and get it merged:
 
 1. Mark it as ready for review.
-2. Engage the automated review; follow `copilot-review` if installed.
+2. Engage the automated review; follow the skill that describes how to deal with automatic review on PRs.
 3. Confirm CI is green, then merge.
 
 Please review if your PR will automatically close related tickets (if any), and react accordingly.
