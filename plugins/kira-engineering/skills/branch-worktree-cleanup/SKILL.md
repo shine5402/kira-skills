@@ -71,14 +71,14 @@ Then wait for the user to reply "go" (or any explicit confirmation).
 **Always use `-f` / `--force` for both operations** — this repo uses submodules (worktree remove needs force) and squash-merges (branch delete needs force):
 
 ```bash
-# Remove each worktree
-git worktree remove -f .claude/worktrees/<name>
+# Remove each worktree (use the path exactly as `git worktree list` prints it)
+git worktree remove -f <worktree-path>
 
 # Delete branches (after their worktrees are gone)
 git branch -D <branch1> <branch2> ...
 ```
 
-**Harness vs manually created worktrees:** worktrees under `.claude/worktrees/` were created by the Claude Code harness and are safe to remove once their branch is done. Worktrees at any other path (e.g. a sibling directory the user created manually with `git worktree add`) are not harness artifacts — ask the user explicitly whether to keep them before including them in the deletion list, even if their branch has a closed PR.
+**Harness vs manually created worktrees:** an agent harness puts its throwaway worktrees inside the repo under a directory of its own — `.claude/worktrees/` (Claude Code), `.opencode/worktrees/` (OpenCode), or whatever the harness in use documents. A worktree that looks agent-produced (inside the repo, under a harness-style directory) is a harness artifact: safe to remove once its branch is done. A hand-made worktree (e.g. a sibling directory the user created with `git worktree add`) is not — ask before including it in the deletion list, even if its branch has a closed PR. When a path is ambiguous, ask.
 
 Worktrees with the `locked` flag require double-force (`git worktree remove --force --force`). Skip locked worktrees unless the user explicitly says to remove them.
 
