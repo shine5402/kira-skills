@@ -11,7 +11,7 @@ Three-axis review of the diff between `HEAD` and a fixed point the user supplies
 
 The axes run as **parallel sub-agents** so they don't pollute each other's context, then this skill aggregates their findings.
 
-The issue tracker should have been provided to you — run `/setup-matt-pocock-skills` if `docs/agents/issue-tracker.md` is missing.
+The issue tracker should have been provided to you. If `docs/agents/issue-tracker.md` is missing, tell the user to run `/setup-matt-pocock-skills`.
 
 ## Process
 
@@ -73,7 +73,7 @@ Each smell reads *what it is* → *how to fix*; match it against the diff:
 **Docs sub-agent prompt** — include:
 
 - The diff command and commit list.
-- The brief: "Load the `writing-for-agents` skill — its rules are the standard for this axis. Review only the prose in the diff: skills, `AGENTS.md` / `CLAUDE.md`, ADRs, docs under `docs/`, agent memories, code comments, and the PR body. Report (a) lines that restate what the code, the config, or the model's own knowledge already carries; (b) amendment shapes — 'previously X, now Y', a correction sitting beside the claim it corrects, a changelog — which should be rewritten to the document's current shape; (c) constraints written as bare imperatives where a decision and its reason would travel further, and rules generalised from a single incident. Your remedies are cut, rewrite, and move behind a pointer. Propose an addition only where an omission actively misleads: name the wrong action a reader would take, give the shortest wording that fixes it, and never supply a reason that isn't already recorded somewhere. Under 400 words."
+- The brief: "Call the Skill tool with `writing-for-agents` — its rules are the standard for this axis. Review only the prose in the diff: skills, `AGENTS.md` / `CLAUDE.md`, ADRs, docs under `docs/`, agent memories, code comments, and the PR body. Report (a) lines that restate what the code, the config, or the model's own knowledge already carries; (b) amendment shapes — 'previously X, now Y', a correction sitting beside the claim it corrects, a changelog — which should be rewritten to the document's current shape; (c) constraints written as bare imperatives where a decision and its reason would travel further, and rules generalised from a single incident. Your remedies are cut, rewrite, and move behind a pointer. Propose an addition only where an omission actively misleads: name the wrong action a reader would take, give the shortest wording that fixes it, and never supply a reason that isn't already recorded somewhere. Under 400 words."
 
 If the spec is missing, skip the Spec sub-agent and note this in the final report. If the diff touches no prose, skip the Docs sub-agent and note that too.
 

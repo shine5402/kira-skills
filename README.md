@@ -20,7 +20,7 @@ claude plugin install kira@kira-skills
 | Plugin | Contents | Install when |
 | --- | --- | --- |
 | `kira` | everything below | you want the lot in one command |
-| `kira-engineering` | the 24 workflow skills | you don't work with Copilot review |
+| `kira-engineering` | the 28 workflow skills | you don't work with Copilot review |
 | `kira-copilot-review` | the `copilot-review` skill | you engage Copilot review, on any harness |
 | `kira-copilot-review-hooks` | the four `PreToolUse` hooks | you're on Claude Code and want the hooks enforcing it |
 
@@ -38,6 +38,7 @@ No plugin declares a `version`, so updates follow the repository's commits — `
 | --- | --- |
 | `writing-for-agents` | How to write and revise a document an agent consumes — a skill, a `CLAUDE.md`, an ADR, a memory, a comment |
 | `code-review` | Three-axis review of a diff — Standards, Spec, Docs — each in its own fresh-context sub-agent |
+| `pr` | The shape a PR body should take — a summary as the smallest visual that makes the change clear, before/after evidence, and a merge-danger call |
 | `copilot-review` | Engaging automated PR review: what to act on, what to skip, when to stop — the one skill outside `kira-engineering` |
 
 **Getting work done**
@@ -45,6 +46,8 @@ No plugin declares a `version`, so updates follow the repository's commits — `
 | Skill | What it does |
 | --- | --- |
 | `implement` / `implement-with-design` | Implement from a spec or tickets; the second also checks against a design prototype |
+| `implement-spec` | Build a whole spec on one integration branch — work the tickets as a task graph, running implementers across the ready frontier, then review |
+| `implement-in-worktree` | `implement`, isolated in a dedicated worktree and closed out with a PR |
 | `tdd` | Red-green-refactor, one seam at a time |
 | `prototype` | A throwaway build to answer a design question |
 | `get-pr-merged` | Take a draft PR through review to merge |
@@ -68,6 +71,7 @@ No plugin declares a `version`, so updates follow the repository's commits — `
 | `wait-what` | That last message didn't land — re-pitch it with context, in plain language and the repo's own terms |
 | `handoff` | Hand the current state to the next session |
 | `prepare-compact` / `trim-memory` | Keep context and memory from silting up |
+| `retro` | Suggest fixes to the agent's environment after a session — navigation, automated checks, coding standards, steering files, tooling |
 | `qt-reference` | Answer Qt questions from the local `.qch` docs and source tree, not the web |
 | `instruments-profiling` | Read macOS Instruments traces — CPU hotspots, hangs, lock contention |
 
@@ -93,9 +97,15 @@ plugins/
 
 Each skill and hook script has exactly one home, under `plugins/`. The `kira` bundle owns no components of its own — its manifest points `skills` at the other plugins' directories, so installing it gets the same files, not copies of them.
 
+## Cross-references
+
+Skills name each other plainly, by the `name` in the target's frontmatter — `Use the Skill tool with "tdd"` — never with a plugin prefix. The prefix is `kira:` or `kira-engineering:` depending on which plugin a repo installed, and a harness without plugin namespacing (opencode, where these are symlinked) has none at all, so a prefixed call either misses or sends the agent hunting for the plugin that owns it.
+
+`code-review` is the one collision: Claude Code bundles a skill by that name, so references to ours read "the kira one, not the built-in" and let the agent resolve the plugin-namespaced skill. No other name in the set overlaps Claude Code's bundled skills.
+
 ## Setup
 
-Several skills — `wayfinder`, `triage`, `to-tickets`, `to-spec`, `code-review` — read per-repo configuration that isn't part of this plugin: `docs/agents/issue-tracker.md`, `CONTEXT.md`, and `docs/adr/`. Run `setup-matt-pocock-skills` from [upstream](https://github.com/mattpocock/skills) once per repo to scaffold it.
+Several skills — `wayfinder`, `triage`, `to-tickets`, `to-spec`, `implement-spec`, `code-review`, and `pr` — read per-repo configuration that isn't part of this plugin: `docs/agents/issue-tracker.md`, `CONTEXT.md`, and `docs/adr/`. Run `setup-matt-pocock-skills` from [upstream](https://github.com/mattpocock/skills) once per repo to scaffold it. Note that upstream v1.3 renamed the domain doc to `GLOSSARY.md`; this set still reads `CONTEXT.md`, so if the scaffolder writes `GLOSSARY.md`, rename it back — `git mv GLOSSARY.md CONTEXT.md` (and likewise `GLOSSARY-MAP.md` → `CONTEXT-MAP.md`).
 
 ## License
 
