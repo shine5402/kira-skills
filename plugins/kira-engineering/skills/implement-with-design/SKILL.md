@@ -6,11 +6,11 @@ disable-model-invocation: true
 
 Implement the work described by the user in the spec or tickets.
 
-Use /tdd where possible, at pre-agreed seams.
+Use the Skill tool with "tdd" where possible, at pre-agreed seams.
 
 Run typechecking regularly, single test files regularly, and the full test suite once at the end.
 
-Once done, review with `/kira[-engineering]:code-review` — not the built-in `code-review`.
+Once done, use the Skill tool with "code-review" — the kira one, not the built-in.
 
 Also use an additional review subagent to compare your implementation against the design prototype
 (e.g. from DesignSync) the user has provided.

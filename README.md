@@ -97,6 +97,12 @@ plugins/
 
 Each skill and hook script has exactly one home, under `plugins/`. The `kira` bundle owns no components of its own — its manifest points `skills` at the other plugins' directories, so installing it gets the same files, not copies of them.
 
+## Cross-references
+
+Skills name each other plainly, by the `name` in the target's frontmatter — `Use the Skill tool with "tdd"` — never with a plugin prefix. The prefix is `kira:` or `kira-engineering:` depending on which plugin a repo installed, and a harness without plugin namespacing (opencode, where these are symlinked) has none at all, so a prefixed call either misses or sends the agent hunting for the plugin that owns it.
+
+`code-review` is the one collision: Claude Code bundles a skill by that name, so references to ours read "the kira one, not the built-in" and let the agent resolve the plugin-namespaced skill. No other name in the set overlaps Claude Code's bundled skills.
+
 ## Setup
 
 Several skills — `wayfinder`, `triage`, `to-tickets`, `to-spec`, `implement-spec`, `code-review`, and `pr` — read per-repo configuration that isn't part of this plugin: `docs/agents/issue-tracker.md`, `CONTEXT.md`, and `docs/adr/`. Run `setup-matt-pocock-skills` from [upstream](https://github.com/mattpocock/skills) once per repo to scaffold it. Note that upstream v1.3 renamed the domain doc to `GLOSSARY.md`; this set still reads `CONTEXT.md`, so if the scaffolder writes `GLOSSARY.md`, rename it back — `git mv GLOSSARY.md CONTEXT.md` (and likewise `GLOSSARY-MAP.md` → `CONTEXT-MAP.md`).
