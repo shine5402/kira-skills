@@ -14,10 +14,6 @@
           },
           {
             "type": "command",
-            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}\"/plugins/kira-copilot-review-hooks/hooks/hint-pr-ready-monitor.py"
-          },
-          {
-            "type": "command",
             "command": "python3 \"${CLAUDE_PLUGIN_ROOT}\"/plugins/kira-copilot-review-hooks/hooks/hint-stale-gh.py"
           }
         ]

@@ -22,7 +22,7 @@ claude plugin install kira@kira-skills
 | `kira` | everything below | you want the lot in one command |
 | `kira-engineering` | the 28 workflow skills | you don't work with Copilot review |
 | `kira-copilot-review` | the `copilot-review` skill | you engage Copilot review, on any harness |
-| `kira-copilot-review-hooks` | the four `PreToolUse` hooks | you're on Claude Code and want the hooks enforcing it |
+| `kira-copilot-review-hooks` | the three `PreToolUse` hooks | you're on Claude Code and want the hooks enforcing it |
 
 The hooks are split out because they are Claude Code's own hook format, and another harness may read them and fail to run them ([an example](https://github.com/github/copilot-cli/issues/4001)). Installing `kira-copilot-review-hooks` pulls `kira-copilot-review` with it — the hooks encode that skill's rules and point at it by name. Install `kira` *or* the pieces, not both: the same skills would register twice, and the hooks would fire twice.
 
@@ -77,11 +77,10 @@ No plugin declares a `version`, so updates follow the repository's commits — `
 
 ## Hooks
 
-Four `PreToolUse` hooks in `kira-copilot-review-hooks`, all advisory except the first, all concerned with GitHub PR review:
+Three `PreToolUse` hooks in `kira-copilot-review-hooks`, all advisory except the first, all concerned with GitHub PR review:
 
 - `block-copilot-mention` — blocks `@copilot` in free text, which posts under your identity and starts a coding session on your account instead of requesting a review
 - `hint-copilot-review-check` — `gh pr view --json reviewRequests` hides bot reviewers, so `[]` doesn't mean Copilot is absent
-- `hint-pr-ready-monitor` — flipping a draft to ready requests a review; don't merge before it lands
 - `hint-stale-gh` — warns when a `gh` result is likely stale
 
 ## Layout

@@ -1,6 +1,6 @@
 {
   "name": "kira-copilot-review-hooks",
-  "description": "PreToolUse hooks that keep automated Copilot PR review honest — one block, three advisories. Claude Code only.",
+  "description": "PreToolUse hooks that keep automated Copilot PR review honest — one block, two advisories. Claude Code only.",
   "author": {
     "name": "shine_5402",
     "url": "https://github.com/shine5402"
