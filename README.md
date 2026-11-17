@@ -57,7 +57,7 @@ No plugin declares a `version`, so updates follow the repository's commits — `
 
 | Skill | What it does |
 | --- | --- |
-| `wayfinder` | Map a body of work before committing to it |
+| `wayfinder` | Map a body of work too big for one session, and land it stage by stage |
 | `triage` | Sort incoming issues into actionable state |
 | `to-spec` / `to-tickets` | Turn a discussion into a spec, or a spec into tickets |
 | `domain-modeling` / `codebase-design` | Sharpen a domain model; design deep modules |
