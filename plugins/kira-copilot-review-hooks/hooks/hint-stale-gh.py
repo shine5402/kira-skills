@@ -21,8 +21,8 @@ import tempfile
 # The release that added Copilot as a reviewer to `gh pr edit`, per gh's own
 # changelog: v2.87.0 (2026-02-18), cli/cli#12567. Nothing to bump — later
 # releases keep the feature. (`gh pr create --reviewer @copilot` arrived one
-# release later, in v2.88.0, but this repo never requests on open: Copilot
-# auto-reviews on PR-open / Draft -> Ready.)
+# release later, in v2.88.0, but a round is requested on the ready flip, never
+# on open: a draft gets no review.)
 MIN_GH_VERSION = (2, 87, 0)
 
 try:
