@@ -3,18 +3,13 @@
 
 `gh pr view <PR#> --json reviewRequests` goes through GraphQL, which OMITS bot
 reviewers. So it returns `[]` even when Copilot *is* requested — and an agent that
-reads that empty result routinely concludes "Copilot didn't attach" and wastes a
-turn (or burns a review round) re-requesting it.
+reads that empty result routinely concludes "Copilot didn't attach" and burns a
+second review round re-requesting it.
 
-Two facts fix this, and this hook injects them as advisory context (it does NOT
-block — checking human reviewers via GraphQL is perfectly fine, and a hook can't
-tell "checking for Copilot" from "checking for humans"):
-
-  1. Copilot's review is auto-requested on PR-open and on Draft -> Ready. If you
-     just did either, you can safely ASSUME Copilot is attached — no need to check.
-     A manual re-request is only warranted AFTER you push fix-up commits.
-  2. `--json reviewRequests` (GraphQL) hides bot reviewers, so `[]` here does NOT
-     mean Copilot is absent.
+This hook injects that fact as advisory context (it does NOT block — checking
+human reviewers via GraphQL is perfectly fine, and a hook can't tell "checking for
+Copilot" from "checking for humans"), and points at the check that holds: the
+issue timeline's `review_requested` event naming Copilot.
 
 See skill: copilot-review.
 """
@@ -93,8 +88,8 @@ if not any(is_pr_view_reviewrequests(seg) for seg in command_segments(command)):
 
 message = (
     "`--json reviewRequests` uses GraphQL, which hides bot reviewers — `[]` here "
-    "doesn't mean Copilot is absent. Copilot auto-attaches on PR-open / "
-    "Draft -> Ready, so you can assume it's there."
+    "doesn't mean Copilot is absent. The PR's issue timeline records a "
+    "`review_requested` event naming Copilot for every real request."
 )
 
 print(json.dumps({

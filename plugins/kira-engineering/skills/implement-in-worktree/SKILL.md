@@ -10,7 +10,7 @@ Use the Skill tool with "tdd" where possible, at pre-agreed seams.
 
 Run typechecking regularly, single test files regularly, and the full test suite once at the end.
 
-Once done, use the Skill tool with "code-review" — the kira one, not the built-in.
+Once done, use the Skill tool with "spec-review".
 
 Commit your work to the current branch.
 

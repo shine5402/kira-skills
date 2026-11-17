@@ -9,15 +9,14 @@
     {
       "name": "kira",
       "source": "./",
-      "description": "Everything below in one install — engineering skills, the Copilot review skill, and its hooks. Install the pieces instead if you only want some.",
+      "description": "An alias of kira-engineering under a shorter name. Install kira-copilot-review alongside it to opt into Copilot as a PR reviewer.",
       "category": "engineering",
       "keywords": [
         "skills",
         "workflow",
         "code-review",
         "tdd",
-        "writing-for-agents",
-        "copilot"
+        "writing-for-agents"
       ]
     },
     {
@@ -37,7 +36,7 @@
     {
       "name": "kira-copilot-review",
       "source": "./plugins/kira-copilot-review",
-      "description": "Engaging automated PR review from GitHub Copilot — what to act on, what to skip, and when to stop.",
+      "description": "GitHub Copilot as a PR reviewer — requesting a round, checking it's attached, telling when it has landed.",
       "category": "engineering",
       "keywords": [
         "skills",

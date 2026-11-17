@@ -10,7 +10,7 @@ Use the Skill tool with "tdd" where possible, at pre-agreed seams.
 
 Run typechecking regularly, single test files regularly, and the full test suite once at the end.
 
-Once done, use the Skill tool with "code-review" — the kira one, not the built-in.
+Once done, use the Skill tool with "spec-review".
 
 Also use an additional review subagent to compare your implementation against the design prototype
 (e.g. from DesignSync) the user has provided.

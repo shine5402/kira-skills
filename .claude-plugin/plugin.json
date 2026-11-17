@@ -1,6 +1,6 @@
 {
   "name": "kira",
-  "description": "The whole kira set in one install: engineering workflow skills, the Copilot PR-review skill, and the Claude Code hooks that back it.",
+  "description": "An alias of kira-engineering under a shorter name: the same workflow skills, invoked as /kira:<name>.",
   "author": {
     "name": "shine_5402",
     "url": "https://github.com/shine5402"
@@ -13,11 +13,9 @@
     "code-review",
     "tdd",
     "writing-for-agents",
-    "copilot",
     "qt"
   ],
   "skills": [
-    "./plugins/kira-engineering/skills",
-    "./plugins/kira-copilot-review/skills"
+    "./plugins/kira-engineering/skills"
   ]
 }
